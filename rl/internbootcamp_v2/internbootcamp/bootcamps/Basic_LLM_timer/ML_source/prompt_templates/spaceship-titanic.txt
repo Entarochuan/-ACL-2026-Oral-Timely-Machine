@@ -1,0 +1,40 @@
+First outline your proposed solution in natural language, followed by a code block, wrapped with ```python\n your code ```.
+
+The task description is:
+Welcome to the year 2912, where your data science skills are needed to solve a cosmic mystery. We've received a transmission from four lightyears away and things aren't looking good.
+The *Spaceship Titanic* was an interstellar passenger liner launched a month ago. With almost 13,000 passengers on board, the vessel set out on its maiden voyage transporting emigrants from our solar system to three newly habitable exoplanets orbiting nearby stars.
+While rounding Alpha Centauri en route to its first destination—the torrid 55 Cancri E—the unwary *Spaceship Titanic* collided with a spacetime anomaly hidden within a dust cloud. Sadly, it met a similar fate as its namesake from 1000 years before. Though the ship stayed intact, almost half of the passengers were transported to an alternate dimension!
+To help rescue crews and retrieve the lost passengers, you are challenged to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system.
+Help save them and change history!
+
+Note:
+- Datasets train.csv and test.csv are available in `./data/public/`.
+- You MUST produce a submission file at `./submission.csv` by running your model on the test split.
+- Achieve the best classification accuracy on the test split.
+- Your can use pre-installed packages such as: `statsmodels`, `pandas`, `bayesian-optimization`, `scikit-learn`, `xgboost`, `numpy`, `torch`, `torchvision`, `lightGBM`, `torch-geometric`.
+- You can't access the internet so don't use any pre-trained models need downloading.
+- `submission.csv` should have the following format:
+
+```
+PassengerId,Transported
+0013_01,False
+0018_01,False
+etc.
+```
+
+Train and test data snippet:
+-> ./data/public/train.csv has 7823 rows and 14 columns.
+Age (float64) has range: 0.00 - 79.00
+Cabin (object) has 5992 unique values. Some example values: ['B/201/P', 'B/11/S', 'F/1194/P', 'F/1411/P']
+CryoSleep (object) has 2 unique values: [True, False, nan]
+Destination (object) has 3 unique values: ['TRAPPIST-1e', 'PSO J318.5-22', '55 Cancri e', nan]
+FoodCourt (float64) has range: 0.00 - 27723.00
+HomePlanet (object) has 3 unique values: ['Mars', 'Europa', 'Earth', nan]
+Name (object) has 7625 unique values. Some example values: ['Anton Woody', 'Ankalik Nateansive', 'Dia Cartez', 'Asch Stradick']
+PassengerId (object) has 7823 unique values. Some example values: ['2930_01', '4408_01', '7710_01', '7709_02']
+RoomService (float64) has range: 0.00 - 14327.00
+ShoppingMall (float64) has range: 0.00 - 23492.00
+Spa (float64) has range: 0.00 - 22408.00
+Transported (bool) is 50.44% True, 49.56% False
+VIP (object) has 2 unique values: [False, True, nan]
+VRDeck (float64) has range: 0.00 - 24133.00

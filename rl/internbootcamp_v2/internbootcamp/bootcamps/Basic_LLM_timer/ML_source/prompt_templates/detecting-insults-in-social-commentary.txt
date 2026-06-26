@@ -1,0 +1,25 @@
+Please first outline your proposed solution in natural language, followed by a single markdown code block. 
+
+The task description is:
+The challenge is to detect when a comment from a conversation would be considered insulting to another participant in the conversation. Samples could be drawn from conversation streams like news commenting sites, magazine comments, message boards, blogs, text messages, etc.
+The idea is to create a generalizable single-class classifier which could operate in a near real-time mode, scrubbing the filth of the internet away in one pass.
+
+Note:
+- Datasets train.csv and test.csv are available in `./data/public/`.
+- You MUST produce a submission file at `./submission.csv` by running your model on the test split.
+- Your task is to predict the probability (0 to 1) that a comment is an insult. Predictions are evaluated using AUC.
+- You can use pre-installed packages like `scikit-learn`, `lightGBM`, `xgboost`, `pandas`, `numpy`, `torch`, etc.
+- You can't access the internet so don't use any pre-trained models need downloading.
+- `./submission.csv` should have the following format:
+```
+Insult,Date,Comment
+0,,"""Okay stuff"""
+0.8,,"""Bad stuff"
+```
+- Data snippet:
+-> ./data/public/train.csv has 3947 rows and 3 columns:
+Insult,Date,Comment
+1,20120618192155Z,"""You fuck your dad."""
+-> ./data/public/test.csv has 2647 rows and 2 columns:
+Date,Comment
+,"""Okay stuff"""

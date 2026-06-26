@@ -1,0 +1,3 @@
+max_score: 360
+Game started. Initial observation:
+b'\n\n\n\n[Type "help" for more information about this version]\n\nDetective\nBy Matt Barringer.\nPorted by Stuart Moore.\nStuart_Moore@my-deja.com\nRelease 1 / Serial number 000715 / Inform v6.21 Library 6/10 SD\n\n<< Chief\'s office >>\nYou are standing in the Chief\'s office. He is telling you "The Mayor was murdered yeaterday night at 12:03 am. I want you to solve it before we get any bad publicity or the FBI has to come in. "Yessir!" You reply. He hands you a sheet of paper. Once you have read it, go north or west.\n\nYou can see a piece of white paper here.\n\n[Your score has just gone up by ten points.]\n'

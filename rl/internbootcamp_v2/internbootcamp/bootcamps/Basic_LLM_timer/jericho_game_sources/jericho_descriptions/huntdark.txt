@@ -1,0 +1,3 @@
+max_score: 1
+Game started. Initial observation:
+b':                        ::                        ::                        ::                        ::                        ::                        :Hunter:                        ::                        ::                        ::                        ::                        ::                        :Hunter,In Darkness\n\nHunter, in Darkness\nA Cave Crawl by Dave Ahl Jr.\nRelease 3 / Serial number 990918 / Inform v6.21 Library 6/9 \n\n\nNearly -- nearly. The animal stink is rank and close. You raise your crossbow, try to peer beyond dark, wet stone.'

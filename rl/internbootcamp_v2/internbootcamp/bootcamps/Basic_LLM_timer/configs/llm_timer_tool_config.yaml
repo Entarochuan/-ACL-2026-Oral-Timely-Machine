@@ -1,0 +1,95 @@
+tools:
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Basic_timer_tool.TimeCallForGeneralTasksTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_duration"
+        description: Gets the total elapsed time (in seconds) since the start of processing the current request. No parameters are needed.
+        parameters:
+          type: "object"
+          properties: {}
+          required: []
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Jericho_timer_tool.JerichoStepTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "step"
+        description: "Execute an action in the game world. Returns the game's textual response and immediate step reward(unrelated to the current score)."
+        parameters:
+          type: "object"
+          properties:
+            action:
+              type: "string"
+              description: "The command to execute. (This should be a parameter of the tool named 'step')."
+          required: ["action"]
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Jericho_timer_tool.JerichoGetAvailableActionsTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_available_actions"
+        description: "Get a list of valid actions in the current state."
+        parameters:
+          type: "object"
+          properties: {}
+          required: []
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Jericho_timer_tool.JerichoGetScoreTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_score"
+        description: "Check the current score of the game. You can call this tool to get your current score and decide your next action. Also, call this tool to decide whether to end the game."
+        parameters:
+          type: "object"
+          properties: {}
+          required: []
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Jericho_timer_tool.JerichoGetMaxScoreTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "get_max_score"
+        description: "Check the maximum possible score of the game to know the goal."
+        parameters:
+          type: "object"
+          properties: {}
+          required: []
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.Jericho_timer_tool.JerichoEndGameTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "end_game"
+        description: "Terminates the current game session."
+        parameters:
+          type: "object"
+          properties: {}
+          required: []
+  - class_name: "internbootcamp.bootcamps.Basic_LLM_timer.MachineLearning_timer_tool.MLTimerTool"
+    config:
+      type: "native"
+      semaphore_limit: 512
+    tool_schema:
+      type: "function"
+      function:
+        name: "execute_code_and_get_duration"
+        description: "Run the machine learning code in your response, and get the evaluation result and the duration of the current task. Please wrap your python code in ```python xxx ``` before calling the tool. No parameters are needed for this tool."
+        parameters:
+          type: "object"
+          properties: {}
+          required: []

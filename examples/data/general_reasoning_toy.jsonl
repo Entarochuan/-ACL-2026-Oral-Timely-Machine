@@ -1,0 +1,2 @@
+{"id": "toy-math-1", "question": "Compute 2 + 2. Put only the final result in <answer>...</answer>.", "answer": "4"}
+{"id": "toy-math-2", "question": "If x = 3, compute x^2 + 1. Put only the final result in <answer>...</answer>.", "answer": "10"}

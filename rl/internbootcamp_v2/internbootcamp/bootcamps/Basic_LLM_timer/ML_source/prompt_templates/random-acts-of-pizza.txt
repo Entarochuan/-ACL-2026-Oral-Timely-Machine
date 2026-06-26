@@ -1,0 +1,52 @@
+First outline your proposed solution in natural language, followed by a single markdown code block. 
+
+The task description is:
+In machine learning, it is often said there are no free lunches. *How wrong we were.*
+This competition contains a dataset with 5671 textual requests for pizza from the Reddit community [Random Acts of Pizza] together with their outcome (successful/unsuccessful) and meta-data. Participants must create an algorithm capable of predicting which requests will garner a cheesy (but sincere!) act of kindness.
+"I'll write a poem, sing a song, do a dance, play an instrument, whatever! I just want a pizza," says one hopeful poster. What about making an algorithm?
+
+Note:
+- Datasets train.json and test.json are available in `./data/public/`.
+- You MUST produce a submission file at `./submission.csv` by running your model on the test split.
+- Your task is to predict the probability that a request resulted in a free pizza.
+- Submissions are evaluated on the ROC curve between the predicted probability and the observed outcomes.
+- Your can use pre-installed packages such as: `statsmodels`, `pandas`, `timm`, `bayesian-optimization`, `scikit-learn`, `xgboost`, `numpy`, `torch`, `torchvision`, `lightGBM`, `torch-geometric`.
+- You can't access the internet so don't use any pre-trained models need downloading.
+- `./submission.csv` should have the following format(make sure the numbers are converted to 0/1.):
+```
+request_id,requester_received_pizza
+t3_i8iy4,0
+t3_1mfqi0,0
+etc
+```
+- Data snippet:
+-> ./data/public/test.json:
+[
+    {
+        "giver_username_if_known": "N/A",
+        "request_id": "t3_1aw5zf",
+        "request_text_edit_aware": "Basically I had unexpected expenses this month out of money and desperate for a pizza. \n\nI Have a Tera account with level 48 Beserker and the account has founder status.Its not much but only thing i have right now that i can live without. Eating is much higher on my priority list right now than playing Tera.\n \nIf you don't want the account I will be happy to pay it forward to someone this friday when I get my paycheck.",
+        "request_title": "[Request] Don't have much but willing to trade.",
+        "requester_account_age_in_days_at_request": 165.9420949074074,
+        "requester_days_since_first_post_on_raop_at_request": 0.0,
+        "requester_number_of_comments_at_request": 13,
+        "requester_number_of_comments_in_raop_at_request": 0,
+        "requester_number_of_posts_at_request": 1,
+        "requester_number_of_posts_on_raop_at_request": 0,
+        "requester_number_of_subreddits_at_request": 6,
+        "requester_subreddits_at_request": [
+            "TeraOnline",
+            "Torchlight",
+            "funny",
+            "pics",
+            "todayilearned",
+            "windowsphone"
+        ],
+        "requester_upvotes_minus_downvotes_at_request": 168,
+        "requester_upvotes_plus_downvotes_at_request": 240,
+        "requester_username": "VirginityCollector",
+        "unix_timestamp_of_request": 1364094882.0,
+        "unix_timestamp_of_request_utc": 1364091282.0
+    },
+...
+

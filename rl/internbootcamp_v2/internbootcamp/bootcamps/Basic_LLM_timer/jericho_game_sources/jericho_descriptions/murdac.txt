@@ -1,0 +1,3 @@
+max_score: 250
+Game started. Initial observation:
+b'\nWelcome to Adventure!\n\nMurdac\nAn adventure game by Jonathan R. Partington (Cambridge University, 1982)\n[This translation: version 1.111115 / Phoenix v1.04 / Inform v6.32\nPlease type "inform" for further details.]\n\nWelcome to the Land of Murdac. This is version 1.07.\n\nType HELP for basic information, and BLURB for the full story.\nAll comments to JRP1 please. New commands BRIEF/TERSE,\nNORMAL/STANDARD, VERBOSE and EXAMINE have now been added.\nYou are standing outside the door of a small flint hut.\nThere are paths off to the east, west and south.\nThe door is locked'

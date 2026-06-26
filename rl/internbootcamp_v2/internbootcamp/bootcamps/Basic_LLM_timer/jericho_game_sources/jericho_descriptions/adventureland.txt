@@ -1,0 +1,3 @@
+max_score: 100
+Game started. Initial observation:
+b"\n\n\n\nA voice booms out ...\nTreasures have an * in their name. Say 'SCORE'\nIf you need a hint on something, try 'HELP'.\n\nADVENTURELAND\nAn Interactive Classic by Scott Adams (circa 1979/80)\nRelease 1 / Serial number 961111 / Inform v6.05 Library 6/2\nStandard interpreter 1.0\n\nForest\nYou're in a forest.\n\nObvious exits: North, South, East, West, Up.\n\nYou can also see: trees"

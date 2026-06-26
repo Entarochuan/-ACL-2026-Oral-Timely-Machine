@@ -1,0 +1,3 @@
+max_score: 7
+Game started. Initial observation:
+b'\nZORK III: The Dungeon Master\nCopyright 1982 by Infocom, Inc. All rights reserved.\nZORK is a trademark of Infocom, Inc.\nRelease 17 / Serial number 840727\n\nEndless Stair\nYou are at the bottom of a seemingly endless stair, winding its way upward beyond your vision. An eerie light, coming from all around you, casts strange shadows on the walls. To the south is a dark and winding trail.\nYour old friend, the brass lantern, is at your feet.\n\n'

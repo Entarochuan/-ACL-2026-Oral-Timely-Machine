@@ -1,0 +1,26 @@
+Please first outline your proposed solution in natural language, followed by a single markdown code block. 
+
+The task description is:
+There are estimated to be nearly half a million species of plant in the world. Classification of species has been historically problematic and often results in duplicate identifications.
+The objective of this playground competition is to use binary leaf images and extracted features, including shape, margin & texture, to accurately identify 99 species of plants. Leaves, due to their volume, prevalence, and unique characteristics, are an effective means of differentiating plant species. They also provide a fun introduction to applying techniques that involve image-based features.
+As a first step, try building a classifier that uses the provided pre-extracted features. Next, try creating a set of your own features. Finally, examine the errors you're making and see what you can do to improve.
+
+Note:
+- Datasets train.csv, test.csv, and images/ are available in `./data/public/`.
+- You MUST produce a submission file at `./submission.csv` by running your model on the test split.
+- Your task is to predict probabilities for 99 plant species using pre-extracted features.
+- Submissions are evaluated using multi-class logarithmic loss. Each image has been labeled with one true species. For each image, you must submit a set of predicted probabilities (one for every species). The submitted probabilities for a given device are not required to sum to one because they are rescaled prior to being scored (each row is divided by the row sum), but they need to be in the range of [0, 1]. In order to avoid the extremes of the log function, predicted probabilities are replaced with \\(max(min(p,1-10^{-15}),10^{-15})\\).
+- You can use pre-installed packages such as: `statsmodels`, `pandas`, `timm`, `bayesian-optimization`, `scikit-learn`, `xgboost`, `numpy`, `torch`, `torchvision`, `lightGBM`, `torch-geometric`.
+- You can't access the internet so don't use any pre-trained models need downloading.
+- `./submission.csv` should have the following format:
+```
+id,Acer_Capillipes,Acer_Circinatum,Acer_Mono,...
+2,0.1,0.5,0,0.2,...
+5,0,0.3,0,0.4,...
+etc.
+```
+- Data snippet:
+-> ./data/public/train.csv has 891 rows and 194 columns.
+id (int), species (object), margin1 to margin64 (float64), shape1 to shape64 (float64), texture1 to texture64 (float64)
+-> ./data/public/test.csv has 99 rows and 193 columns.
+id (int), margin1 to margin64 (float64), shape1 to shape64 (float64), texture1 to texture64 (float64)

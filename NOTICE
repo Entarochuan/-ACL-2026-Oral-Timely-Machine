@@ -1,0 +1,5 @@
+Timely Eval includes a math answer normalization helper adapted from
+EleutherAI lm-evaluation-harness under the Apache License 2.0.
+
+Original reference:
+https://github.com/EleutherAI/lm-evaluation-harness/blob/main/lm_eval/tasks/hendrycks_math/utils.py

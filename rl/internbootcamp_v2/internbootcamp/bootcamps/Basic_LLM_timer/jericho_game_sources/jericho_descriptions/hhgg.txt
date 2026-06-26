@@ -1,0 +1,3 @@
+max_score: 400
+Game started. Initial observation:
+b"Infocom interactive fiction - a science fiction story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nRelease 59 / Serial number 851108\n\nYou wake up. The room is spinning very gently round your head. Or at least it would be if you could see it which you can't.\n\nIt is pitch black.\n\n"

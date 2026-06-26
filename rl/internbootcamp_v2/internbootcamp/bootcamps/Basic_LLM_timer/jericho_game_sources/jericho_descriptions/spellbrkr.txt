@@ -1,0 +1,3 @@
+max_score: 600
+Game started. Initial observation:
+b'An Interactive Fantasy\nCopyright (c) 1985 by Infocom, Inc. All rights reserved.\nSPELLBREAKER is a trademark of Infocom, Inc.\nRelease 63 / Serial number 850916\n\nCouncil Chamber\nYou are in the Council Chamber of the ancient Guild Hall at Borphee. To the south is the entry of the Guild Hall. There is a meeting of the Guildmasters going on. You are standing among a group of about ten sorcerers, each the master of an Enchanters Guild chapter somewhere in the land.\n\n'

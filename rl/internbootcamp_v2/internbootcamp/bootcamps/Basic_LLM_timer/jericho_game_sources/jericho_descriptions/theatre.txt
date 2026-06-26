@@ -1,0 +1,3 @@
+max_score: 50
+Game started. Initial observation:
+b'T  H  E  A  T  R  E An Interactive Night of HorrorCopyright (c) 1995 by Cave Rock Software Ltd.All rights reserved.[Press any key to continue...]                                                                                                                                \n[Instructions and other information is available by typing HELP at the'

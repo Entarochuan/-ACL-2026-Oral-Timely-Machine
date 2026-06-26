@@ -1,0 +1,3 @@
+max_score: 400
+Game started. Initial observation:
+b'\nTwisted Forest\nYou are on a path through a blighted forest. The trees are sickly, and there is no undergrowth at all. One tree here looks climbable. The path, which ends here, continues to the northeast.\n\nA hellhound is racing straight toward you, its open jaws displaying rows of razor-sharp teeth.\n\n'

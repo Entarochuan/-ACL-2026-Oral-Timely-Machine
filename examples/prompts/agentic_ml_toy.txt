@@ -1,0 +1,10 @@
+Respond briefly. Do not use <think> tags. Provide one short sentence, followed by one complete fenced Python code block.
+The code should be self-contained, use pandas/numpy/scikit-learn only, and write ./submission.csv.
+
+Task:
+- Train data is available at ./data/public/train.csv.
+- Test data is available at ./data/public/test.csv.
+- Build a binary classifier for column label using feature x.
+- Write ./submission.csv with columns: id,label.
+- label must be a probability between 0 and 1.
+- Do not access the internet.
