@@ -1,60 +1,70 @@
 # Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
 
-[English README](README.md) | [Timely Eval](src/timely_eval) | [RL Training](rl/internbootcamp_v2)
+**Timely Machine** 的官方开源代码，包含评测框架和 RL 训练代码。
 
-本目录是论文 **Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic** 的开源整理版。
+[English README](README.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
 
-代码分为两部分：
+## 两条代码路径
 
-- **Timely Eval**：评测框架，位于 `src/timely_eval/`，可以直接安装运行。
-- **Timely RL**：RL 训练代码，位于 `rl/internbootcamp_v2/`，入口、依赖和运行方式与 Eval 分开。
+本仓库有两个相互区分的部分。复现实验评测请使用 **Timely Eval**；训练 timer-aware agent 请使用 **Timely RL**。
+
+| 部分 | 位置 | 入口 | 用途 |
+| --- | --- | --- | --- |
+| **Timely Eval** | `src/timely_eval/` | `timely-eval ...` | 可直接安装运行的时间感知评测框架。 |
+| **Timely RL** | `rl/internbootcamp_v2/` | `scripts/run_llm_timer_rl_example.sh` | RL 训练代码、环境 server、tool backend 和本地 verl 训练栈。 |
+
+## Timely Eval
+
+Timely Eval 是本仓库中轻量、可安装的评测包，支持 OpenAI-compatible API endpoint，也支持本地 vLLM/SGLang 服务。
+
+| 评测轨道 | 命令 | 需要的资源 |
+| --- | --- | --- |
+| 通用推理 | `timely-eval general` | JSONL 格式的问题和答案。 |
+| Agentic ML | `timely-eval agentic-ml` | 公开 train/test CSV、private labels、prompt template。 |
+| Interactive Jericho | `timely-eval interactive` | 本地 Jericho/Frotz 游戏文件，例如 `zork1.z5`。 |
+
+Interactive games time-performance 实验图：[picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
+
+## Timely RL
+
+Timely RL 是训练侧代码，比 Eval 包更重，有独立依赖、运行时服务和启动脚本。
+
+<p align="center">
+  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Machine RL pipeline">
+</p>
+
+RL 主入口：
+
+```text
+rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
+```
+
+典型启动顺序：
+
+1. 启动一个任务环境 server：general timer、Agentic ML timer 或 Jericho。
+2. 启动分布式 tool backend：`scripts/run_llm_timer_tool_server.sh`。
+3. 启动训练：`scripts/run_llm_timer_rl_example.sh`。
+
+RL 详细说明见 [rl/internbootcamp_v2/README.md](rl/internbootcamp_v2/README.md)。
 
 ## What's New
 
-- **[2026.06]** 发布 Timely Eval、RL 训练代码、toy examples、单测和 smoke-test 说明。
-- **[2026.06]** RL 代码独立放在 `rl/internbootcamp_v2/`，与 Eval 入口区分。
-- **[2026.06]** General reasoning、Agentic ML、Interactive Jericho 三类路径已完成 smoke test。
-
-## Todo List
-
-- ✅ Timely Eval 代码
-- ✅ RL 训练代码
-- ✅ Toy examples 和单测
-- ✅ 英文 README + 中文 README
-- ✅ RL pipeline 和 interactive-games 实验图
-- ⬜ 论文链接和正式 citation
-- ⬜ 模型/checkpoint 链接，如后续发布
-
-## Highlights
-
-- ⏱️ **时间感知评测**：评测模型是否能在显式时间预算下调整推理、写代码和交互策略。
-- 🧮 **通用推理评测**：支持 AIME、MATH、GPQA 风格 JSONL 数据，两阶段测速和时间预算评测。
-- 🧑‍💻 **Agentic ML 评测**：模型生成 Python 代码、执行、根据反馈迭代改进 `submission.csv`。
-- 🎮 **交互环境评测**：可选 Jericho/Frotz 文本游戏交互评测。
-- 🛠️ **OpenAI-compatible 后端**：支持 API 模型、本地 vLLM/SGLang 服务或其他兼容 endpoint。
-- 🚀 **RL 训练代码**：包含 timer tools、tool server、local verl 和训练启动脚本。
-
-RL pipeline：
-
-<p align="center">
-  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Reasoner RL pipeline">
-</p>
-
-Interactive games time-performance 实验图：
-
-- [picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
+- **2026.06** 发布 Timely Eval、Timely RL、toy examples、单测和 smoke-test 说明。
+- **2026.06** README 拆分为英文主页和中文说明。
+- **2026.06** 文档和运行方式中明确区分 Eval 与 RL。
 
 ## 目录结构
 
 ```text
-src/timely_eval/                 # Eval 包和 CLI
+src/timely_eval/                 # Timely Eval 包和 CLI
 examples/                        # 用于 smoke test 的合成 toy data/prompt
 tests/                           # Eval 单测
-rl/internbootcamp_v2/            # RL 训练代码、bootcamp tools、本地 verl 代码
+rl/internbootcamp_v2/            # Timely RL 训练代码和本地 verl 训练栈
 rl/internbootcamp_v2/README.md   # RL 安装和启动说明
+assets/                          # README 图片和论文素材
 ```
 
-## 安装
+## 安装 Eval
 
 ```bash
 cd OpenSource
@@ -77,7 +87,7 @@ export OPENAI_API_KEY="your-key"
 export OPENAI_BASE_URL="https://api.openai.com/v1"
 ```
 
-本地服务也可以：
+本地服务：
 
 ```bash
 export OPENAI_API_KEY="empty"
@@ -86,7 +96,9 @@ export NO_PROXY="127.0.0.1,localhost"
 export no_proxy="127.0.0.1,localhost"
 ```
 
-## 通用推理评测
+## Eval Quick Start
+
+### 通用推理评测
 
 数据格式为 JSONL，每行包含：
 
@@ -94,7 +106,7 @@ export no_proxy="127.0.0.1,localhost"
 {"id": "case-1", "question": "Compute 2 + 2.", "answer": "4"}
 ```
 
-第一步，测速：
+测速：
 
 ```bash
 timely-eval general \
@@ -106,7 +118,7 @@ timely-eval general \
   --workers 4
 ```
 
-第二步，按相对时间预算评测：
+按相对时间预算评测：
 
 ```bash
 timely-eval general \
@@ -119,7 +131,7 @@ timely-eval general \
   --time-limit-probs 0.75 1.0 2.0 3.0
 ```
 
-第三步，只分析已有结果：
+只分析已有结果：
 
 ```bash
 timely-eval general \
@@ -130,9 +142,16 @@ timely-eval general \
   --model <MODEL_NAME>
 ```
 
-## Agentic ML 评测
+### Agentic ML 评测
 
-需要提供公开训练/测试数据、评测用标签文件和 prompt 模板。toy 示例：
+Agentic ML 需要：
+
+- `data_dir/public/train.csv`
+- `data_dir/public/test.csv`
+- 评测用 private label 文件
+- 告诉 agent 如何生成 `submission.csv` 的 prompt template
+
+Toy 测速：
 
 ```bash
 timely-eval agentic-ml \
@@ -165,7 +184,7 @@ timely-eval agentic-ml \
   --time-limit-probs 1.0 2.0 3.0
 ```
 
-## Jericho 交互评测
+### Jericho 交互评测
 
 需要本地游戏文件，例如 `zork1.z5`：
 
@@ -174,7 +193,9 @@ timely-eval interactive \
   --mode speed_eval \
   --game-path /path/to/zork1.z5 \
   --output-dir outputs/interactive_zork1 \
-  --model <MODEL_NAME>
+  --model <MODEL_NAME> \
+  --batch-size 4 \
+  --max-test-steps 64
 ```
 
 ```bash
@@ -183,51 +204,42 @@ timely-eval interactive \
   --game-path /path/to/zork1.z5 \
   --output-dir outputs/interactive_zork1 \
   --model <MODEL_NAME> \
+  --batch-size 4 \
   --max-steps 30 50 100 200
 ```
 
-## RL 训练代码
+## RL Quick Start
 
-RL 部分和 Eval 部分是分开的。RL 代码请参考：
+RL 不通过上面的 Eval 安装流程安装。完整环境请看 RL README：
 
 ```bash
 cd rl/internbootcamp_v2
 less README.md
 ```
 
-主要入口：
+Smoke-test 状态：
 
-```text
-rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
-```
+| 组件 | 状态 |
+| --- | --- |
+| General timer server | `/health`、`/register`、`/call` 已通过。 |
+| Agentic ML server 和 `MLTimerTool` | 外部提供 ML data 后，代码执行、`submission.csv` 评测、计时已通过。 |
+| Jericho server 和 tools | 外部提供 ROM 后，available actions、score、max score、`look`、end-game 已通过。 |
+| 单步 RL smoke | Qwen3-8B 在一张 H200 上配合 actor/reference CPU offload 跑通。 |
 
-启动顺序：
-
-1. 先启动任务环境 server：general timer、Agentic ML timer 或 Jericho。
-2. 再启动分布式 tool backend：`scripts/run_llm_timer_tool_server.sh`。
-3. 最后启动 RL：`scripts/run_llm_timer_rl_example.sh`。
-
-当前 smoke-test 状态：
-
-- General timer server：`/health`、`/register`、`/call` 已通过。
-- Agentic ML server 和 `MLTimerTool`：外部提供 `ML_source/data_sources` 后，代码执行、`submission.csv` 评测和计时已通过。
-- Jericho server 和 tools：外部提供 ROM 后，available actions、score、max score、`look`、end-game 已通过。
-- Qwen3-8B 单步 RL smoke 在一张 H200 上配合 actor/reference CPU offload 跑通。
-
-## 数据和开源清理
+## 开源清理说明
 
 本版本已经移除原始工作目录中的敏感或机器相关内容：
 
-- 不包含 API key、服务账号 JSON、内部 IP、私有 endpoint。
-- 不包含实验日志、模型输出、checkpoint、workspace、真实 private label、大型 RL 数据集、内部集群启动快照。
-- 不包含 ML benchmark 的 `data_sources`。
-- 不包含 Jericho game ROM 文件。
+- API key、服务账号 JSON、内部 IP、私有 endpoint
+- 实验日志、模型输出、checkpoint、workspace、真实 private label、大型 RL 数据集、内部集群启动快照
+- ML benchmark 的 `data_sources`
+- Jericho game ROM 文件
 
-`examples/` 里的数据是合成 toy data，只用于验证流程。
+`examples/` 中的数据是合成 toy data，只用于验证流程。
 
 注意：Agentic ML 会执行模型生成的 Python。当前实现只是子进程和工作目录隔离，不是安全沙箱。运行不可信模型时，请放在容器或虚拟机中，并限制文件系统和网络访问。
 
-## 开发与发布前检查
+## 开发
 
 ```bash
 pip install -e ".[agentic,dev]"
@@ -239,8 +251,6 @@ PYTHONPATH=src pytest -q
 ```bash
 rg -n "sk-|CREDENTIALS|BEGIN .*PRIVATE KEY|/mnt/|http://10\\.|http://100\\.|http://172\\.|http://192\\.168\\." .
 ```
-
-预期只应命中文档中的泛化变量名，不应出现真实 key、私有路径或内部 endpoint。
 
 ## Citation
 
