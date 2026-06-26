@@ -255,7 +255,7 @@ rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
 
 ### Setup and Quick Start
 
-Use the RL README for the full environment, task servers, backend server, and launch scripts:
+Use the [RL README](rl/internbootcamp_v2/README.md) for the full environment, task servers, backend server, and launch scripts:
 
 ```bash
 cd rl/internbootcamp_v2

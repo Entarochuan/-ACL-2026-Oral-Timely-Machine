@@ -246,7 +246,7 @@ rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
 
 ### 安装与 Quick Start
 
-完整环境、任务 server、backend server 和训练脚本请看 RL README：
+完整环境、任务 server、backend server 和训练脚本请看 [RL README](rl/internbootcamp_v2/README.md)：
 
 ```bash
 cd rl/internbootcamp_v2
