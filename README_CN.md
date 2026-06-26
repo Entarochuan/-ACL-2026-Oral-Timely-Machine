@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/repo_icon.png" width="160" alt="Timely Machine icon">
+  <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
 <h1 align="center">⏱️ Timely Machine</h1>
