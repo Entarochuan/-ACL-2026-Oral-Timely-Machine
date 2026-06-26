@@ -5,6 +5,10 @@
 <h1 align="center">Timely Machine</h1>
 
 <p align="center">
+  <strong>ACL 2026 Oral</strong>
+</p>
+
+<p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
 </p>
 
