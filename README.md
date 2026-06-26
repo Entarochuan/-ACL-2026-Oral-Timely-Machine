@@ -2,16 +2,30 @@
   <img src="assets/repo_icon.png" width="160" alt="Timely Machine icon">
 </p>
 
-# ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
+<h1 align="center">⏱️ Timely Machine</h1>
 
-Official code release for **Timely Machine**, including the evaluation framework and the RL training code.
+<p align="center">
+  <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
+</p>
 
-[Paper](https://arxiv.org/abs/2601.16486) · [中文说明](README_CN.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
+<p align="center">
+  Official code release, including the evaluation framework and the RL training code.
+</p>
 
-![Python](https://img.shields.io/badge/python-3.10%2B-3776AB)
-![License](https://img.shields.io/badge/license-Apache--2.0-3DA639)
-![Eval](https://img.shields.io/badge/module-Timely%20Eval-4B5563)
-![RL](https://img.shields.io/badge/module-Timely%20RL-4B5563)
+<p align="center">
+  <a href="https://arxiv.org/abs/2601.16486">📄 Paper</a> ·
+  <a href="README_CN.md">🌐 中文说明</a> ·
+  <a href="src/timely_eval">🧪 Eval Package</a> ·
+  <a href="rl/internbootcamp_v2">🏋️ RL Code</a> ·
+  <a href="rl/internbootcamp_v2/README.md">📘 RL README</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.10%2B-3776AB" alt="Python">
+  <img src="https://img.shields.io/badge/license-Apache--2.0-3DA639" alt="License">
+  <img src="https://img.shields.io/badge/module-Timely%20Eval-4B5563" alt="Timely Eval">
+  <img src="https://img.shields.io/badge/module-Timely%20RL-4B5563" alt="Timely RL">
+</p>
 
 ## Highlights
 

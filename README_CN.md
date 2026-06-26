@@ -2,11 +2,23 @@
   <img src="assets/repo_icon.png" width="160" alt="Timely Machine icon">
 </p>
 
-# ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
+<h1 align="center">⏱️ Timely Machine</h1>
 
-**Timely Machine** 的官方开源代码，包含评测框架和 RL 训练代码。
+<p align="center">
+  <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
+</p>
 
-[Paper](https://arxiv.org/abs/2601.16486) · [English README](README.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
+<p align="center">
+  官方开源代码，包含评测框架和 RL 训练代码。
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2601.16486">📄 Paper</a> ·
+  <a href="README.md">🌐 English README</a> ·
+  <a href="src/timely_eval">🧪 Eval Package</a> ·
+  <a href="rl/internbootcamp_v2">🏋️ RL Code</a> ·
+  <a href="rl/internbootcamp_v2/README.md">📘 RL README</a>
+</p>
 
 ## Highlights
 
