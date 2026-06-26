@@ -26,16 +26,38 @@
 
 我们提出 **Timely-Eval**，覆盖高频工具调用、低频工具调用和限时推理任务。通过改变工具延迟，我们发现小模型在低延迟设置下可以通过更多反馈和交互取得优势，而大模型在高延迟设置下依靠更高质量的交互占优。针对现有模型难以适配时间预算的问题，我们进一步提出 **Timely-RL**，在 cold-start SFT 后使用强化学习增强 temporal planning，并在 Timely-Eval 上稳定提升表现。
 
-## 两条代码路径
+## What's New
+
+- **2026.06** 发布 Timely Eval、Timely RL、toy examples、单测和 smoke-test 说明。
+- **2026.06** README 拆分为英文主页和中文说明。
+- **2026.06** 文档和运行方式中明确区分 Eval 与 RL。
+
+## 选择代码路径
 
 本仓库有两个相互区分的部分。复现实验评测请使用 **Timely Eval**；训练 timer-aware agent 请使用 **Timely RL**。
 
-| 部分 | 位置 | 入口 | 用途 |
-| --- | --- | --- | --- |
-| **Timely Eval** | `src/timely_eval/` | `timely-eval ...` | 可直接安装运行的时间感知评测框架。 |
-| **Timely RL** | `rl/internbootcamp_v2/` | `scripts/run_llm_timer_rl_example.sh` | RL 训练代码、环境 server、tool backend 和本地 verl 训练栈。 |
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🧪 Timely Eval</h3>
+      <p><strong>用于复现实验评测。</strong></p>
+      <p>可安装的评测包和 CLI，覆盖通用推理、Agentic ML 和 Interactive Jericho。</p>
+      <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
+      <p><a href="#timely-eval">Eval quick start</a></p>
+    </td>
+    <td width="50%">
+      <h3>🏋️ Timely RL</h3>
+      <p><strong>用于训练 timer-aware agent。</strong></p>
+      <p>训练代码、环境 server、分布式 tool backend 和本地 verl 训练管线。</p>
+      <p><code>rl/internbootcamp_v2/</code><br><code>scripts/run_llm_timer_rl_example.sh</code></p>
+      <p><a href="#timely-rl">RL quick start</a></p>
+    </td>
+  </tr>
+</table>
 
-## Timely Eval
+<a id="timely-eval"></a>
+
+## 🧪 Timely Eval: 评测套件
 
 Timely Eval 是本仓库中轻量、可安装的评测包，支持 OpenAI-compatible API endpoint，也支持本地 vLLM/SGLang 服务。
 
@@ -53,7 +75,9 @@ Interactive games time-performance 实验图：
 
 PDF 版本：[picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
 
-## Timely RL
+<a id="timely-rl"></a>
+
+## 🏋️ Timely RL: 训练管线
 
 Timely RL 是训练侧代码，比 Eval 包更重，有独立依赖、运行时服务和启动脚本。
 
@@ -74,12 +98,6 @@ rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
 3. 启动训练：`scripts/run_llm_timer_rl_example.sh`。
 
 RL 详细说明见 [rl/internbootcamp_v2/README.md](rl/internbootcamp_v2/README.md)。
-
-## What's New
-
-- **2026.06** 发布 Timely Eval、Timely RL、toy examples、单测和 smoke-test 说明。
-- **2026.06** README 拆分为英文主页和中文说明。
-- **2026.06** 文档和运行方式中明确区分 Eval 与 RL。
 
 ## 目录结构
 

@@ -33,16 +33,38 @@ Large language models increasingly rely on test-time scaling for complex reasoni
 
 We introduce **Timely-Eval**, covering high-frequency tool calls, low-frequency tool calls, and time-constrained reasoning. By varying tool latency, we observe that smaller models benefit more from fast feedback and frequent interaction, while larger models dominate high-latency settings through stronger interaction quality. Since existing models struggle to adapt reasoning to time budgets, we further propose **Timely-RL**, a cold-start SFT plus reinforcement learning recipe that improves temporal planning and boosts performance across Timely-Eval.
 
-## Two Code Paths
+## What's New
+
+- **2026.06** Initial open-source release with Timely Eval, Timely RL, toy examples, tests, and smoke-tested launch notes.
+- **2026.06** README split into English and Chinese versions.
+- **2026.06** Eval and RL code paths are separated in documentation and runtime setup.
+
+## Choose Your Path
 
 This repository has two intentionally separate parts. Use **Timely Eval** if you want to reproduce evaluation. Use **Timely RL** if you want to train timer-aware agents.
 
-| Part | Location | Entry | Purpose |
-| --- | --- | --- | --- |
-| **Timely Eval** | `src/timely_eval/` | `timely-eval ...` | Standalone evaluation framework for time-aware test-time scaling. |
-| **Timely RL** | `rl/internbootcamp_v2/` | `scripts/run_llm_timer_rl_example.sh` | RL training code, local task servers, tool backend, and verl-based training stack. |
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🧪 Timely Eval</h3>
+      <p><strong>Use this for evaluation.</strong></p>
+      <p>Installable package and CLI for General Reasoning, Agentic ML, and Interactive Jericho evaluation.</p>
+      <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
+      <p><a href="#timely-eval">Eval quick start</a></p>
+    </td>
+    <td width="50%">
+      <h3>🏋️ Timely RL</h3>
+      <p><strong>Use this for training.</strong></p>
+      <p>Training code, local environment servers, distributed tool backend, and verl-based RL pipeline.</p>
+      <p><code>rl/internbootcamp_v2/</code><br><code>scripts/run_llm_timer_rl_example.sh</code></p>
+      <p><a href="#timely-rl">RL quick start</a></p>
+    </td>
+  </tr>
+</table>
 
-## Timely Eval
+<a id="timely-eval"></a>
+
+## 🧪 Timely Eval: Evaluation Suite
 
 Timely Eval is the lightweight, installable evaluation package in this release. It supports OpenAI-compatible API endpoints, including local vLLM/SGLang servers.
 
@@ -60,7 +82,9 @@ Interactive games time-performance experiment:
 
 PDF version: [picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
 
-## Timely RL
+<a id="timely-rl"></a>
+
+## 🏋️ Timely RL: Training Pipeline
 
 Timely RL is the training-side code. It is heavier than the eval package and has separate dependencies, runtime services, and launch scripts.
 
@@ -81,12 +105,6 @@ Typical RL launch order:
 3. Start training with `scripts/run_llm_timer_rl_example.sh`.
 
 See [rl/internbootcamp_v2/README.md](rl/internbootcamp_v2/README.md) for RL-specific setup and smoke-test notes.
-
-## What's New
-
-- **2026.06** Initial open-source release with Timely Eval, Timely RL, toy examples, tests, and smoke-tested launch notes.
-- **2026.06** README split into English and Chinese versions.
-- **2026.06** Eval and RL code paths are separated in documentation and runtime setup.
 
 ## Repository Structure
 
