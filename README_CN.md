@@ -77,8 +77,6 @@ Interactive games time-performance 实验图：
   <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
 </p>
 
-PDF 版本：[picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
-
 <a id="timely-rl"></a>
 
 ## 🏋️ Timely RL: 训练管线

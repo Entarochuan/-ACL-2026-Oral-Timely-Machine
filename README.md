@@ -84,8 +84,6 @@ Interactive games time-performance experiment:
   <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
 </p>
 
-PDF version: [picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
-
 <a id="timely-rl"></a>
 
 ## 🏋️ Timely RL: Training Pipeline
