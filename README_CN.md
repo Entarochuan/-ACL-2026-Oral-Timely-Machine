@@ -2,7 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">Timely Machine · ACL 26 Oral</h1>
+<h1 align="center">[ACL 26 Oral] Timely Machine</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
