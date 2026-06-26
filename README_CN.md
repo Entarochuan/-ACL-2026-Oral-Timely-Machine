@@ -1,8 +1,14 @@
-# Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
+# ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
 
 **Timely Machine** 的官方开源代码，包含评测框架和 RL 训练代码。
 
-[English README](README.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
+[Paper](https://arxiv.org/abs/2601.16486) · [English README](README.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
+
+## Highlights
+
+随着大语言模型处理更复杂的推理任务，test-time scaling 变得越来越重要。但在频繁调用工具的 agentic 场景中，传统基于生成长度的 test-time 定义会失效，因为工具延迟会让真实推理时间和 token 长度解耦。**Timely Machine** 将 test-time 重新定义为 wall-clock time，研究模型能否根据显式时间预算动态调整策略。
+
+我们提出 **Timely-Eval**，覆盖高频工具调用、低频工具调用和限时推理任务。通过改变工具延迟，我们发现小模型在低延迟设置下可以通过更多反馈和交互取得优势，而大模型在高延迟设置下依靠更高质量的交互占优。针对现有模型难以适配时间预算的问题，我们进一步提出 **Timely-RL**，在 cold-start SFT 后使用强化学习增强 temporal planning，并在 Timely-Eval 上稳定提升表现。
 
 ## 两条代码路径
 
@@ -23,7 +29,13 @@ Timely Eval 是本仓库中轻量、可安装的评测包，支持 OpenAI-compat
 | Agentic ML | `timely-eval agentic-ml` | 公开 train/test CSV、private labels、prompt template。 |
 | Interactive Jericho | `timely-eval interactive` | 本地 Jericho/Frotz 游戏文件，例如 `zork1.z5`。 |
 
-Interactive games time-performance 实验图：[picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
+Interactive games time-performance 实验图：
+
+<p align="center">
+  <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
+</p>
+
+PDF 版本：[picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
 
 ## Timely RL
 
@@ -255,10 +267,13 @@ rg -n "sk-|CREDENTIALS|BEGIN .*PRIVATE KEY|/mnt/|http://10\\.|http://100\\.|http
 ## Citation
 
 ```bibtex
-@misc{timelyreasoner2026,
-  title = {Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic},
-  author = {Timely Machine Authors},
-  year = {2026},
-  note = {Code release}
+@misc{ma2026timelymachineawarenesstime,
+      title={Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic},
+      author={Yichuan Ma and Linyang Li and Yongkang chen and Peiji Li and Xiaozhe Li and Qipeng Guo and Dahua Lin and Kai Chen},
+      year={2026},
+      eprint={2601.16486},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.16486},
 }
 ```

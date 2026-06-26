@@ -1,13 +1,19 @@
-# Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
+# ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
 
 Official code release for **Timely Machine**, including the evaluation framework and the RL training code.
 
-[Paper](#citation) · [中文说明](README_CN.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
+[Paper](https://arxiv.org/abs/2601.16486) · [中文说明](README_CN.md) · [Eval Package](src/timely_eval) · [RL Code](rl/internbootcamp_v2) · [RL README](rl/internbootcamp_v2/README.md)
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB)
 ![License](https://img.shields.io/badge/license-Apache--2.0-3DA639)
 ![Eval](https://img.shields.io/badge/module-Timely%20Eval-4B5563)
 ![RL](https://img.shields.io/badge/module-Timely%20RL-4B5563)
+
+## Highlights
+
+Large language models increasingly rely on test-time scaling for complex reasoning, but agentic workflows break the traditional generation-length view of test-time because tool latency decouples wall-clock time from generated tokens. **Timely Machine** redefines test-time scaling around wall-clock time and studies whether agents can adapt their strategies under explicit time budgets.
+
+We introduce **Timely-Eval**, covering high-frequency tool calls, low-frequency tool calls, and time-constrained reasoning. By varying tool latency, we observe that smaller models benefit more from fast feedback and frequent interaction, while larger models dominate high-latency settings through stronger interaction quality. Since existing models struggle to adapt reasoning to time budgets, we further propose **Timely-RL**, a cold-start SFT plus reinforcement learning recipe that improves temporal planning and boosts performance across Timely-Eval.
 
 ## Two Code Paths
 
@@ -28,7 +34,13 @@ Timely Eval is the lightweight, installable evaluation package in this release. 
 | Agentic ML | `timely-eval agentic-ml` | Public train/test CSVs, private labels, prompt template. |
 | Interactive Jericho | `timely-eval interactive` | Local Jericho/Frotz game file, e.g. `zork1.z5`. |
 
-Interactive games time-performance experiment: [picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
+Interactive games time-performance experiment:
+
+<p align="center">
+  <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
+</p>
+
+PDF version: [picture_time_performance_acl.pdf](assets/picture_time_performance_acl.pdf)
 
 ## Timely RL
 
@@ -264,10 +276,13 @@ rg -n "sk-|CREDENTIALS|BEGIN .*PRIVATE KEY|/mnt/|http://10\\.|http://100\\.|http
 If you find this work helpful, please consider citing:
 
 ```bibtex
-@misc{timelyreasoner2026,
-  title = {Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic},
-  author = {Timely Machine Authors},
-  year = {2026},
-  note = {Code release}
+@misc{ma2026timelymachineawarenesstime,
+      title={Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic},
+      author={Yichuan Ma and Linyang Li and Yongkang chen and Peiji Li and Xiaozhe Li and Qipeng Guo and Dahua Lin and Kai Chen},
+      year={2026},
+      eprint={2601.16486},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.16486},
 }
 ```
