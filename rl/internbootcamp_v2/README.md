@@ -35,7 +35,8 @@ The most relevant files are:
 Install the package from this directory:
 
 ```bash
-cd OpenSource/rl/internbootcamp_v2
+git clone https://github.com/Entarochuan/Timely-Machine.git
+cd Timely-Machine/rl/internbootcamp_v2
 pip install -e . --no-deps
 pip install -e ./verl --no-deps
 ```
@@ -60,7 +61,7 @@ Prepare your own model and parquet datasets.
 Start the task environment server required by your dataset:
 
 ```bash
-cd OpenSource/rl/internbootcamp_v2
+cd Timely-Machine/rl/internbootcamp_v2
 
 # General reasoning timer tasks.
 python -m internbootcamp.bootcamps.Basic_LLM_timer.local_timer_server
@@ -80,7 +81,7 @@ Start only the environment server needed by the task type you are training.
 Then start the distributed tool backend:
 
 ```bash
-cd OpenSource/rl/internbootcamp_v2
+cd Timely-Machine/rl/internbootcamp_v2
 PORT=18091 \
 NUM_WORKERS=1 \
 bash internbootcamp/bootcamps/Basic_LLM_timer/scripts/run_llm_timer_tool_server.sh
@@ -95,7 +96,7 @@ internbootcamp/bootcamps/Basic_LLM_timer/configs/llm_timer_tool_config_with_serv
 Then start RL training in another shell:
 
 ```bash
-cd OpenSource/rl/internbootcamp_v2
+cd Timely-Machine/rl/internbootcamp_v2
 MODEL_PATH=/path/to/base_model \
 TRAIN_FILE=/path/to/train.parquet \
 VAL_FILE=/path/to/val.parquet \

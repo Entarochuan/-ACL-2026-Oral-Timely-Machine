@@ -88,7 +88,8 @@ Interactive games time-performance 实验图：
 ### 安装
 
 ```bash
-cd OpenSource
+git clone https://github.com/Entarochuan/Timely-Machine.git
+cd Timely-Machine
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[agentic,dev]"

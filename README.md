@@ -2,7 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">[ACL 26 Oral] Timely Machine </h1>
+<h1 align="center">[ACL 26 Oral] Timely Machine</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
@@ -97,7 +97,8 @@ Interactive games time-performance experiment:
 Install the Timely Eval package:
 
 ```bash
-cd OpenSource
+git clone https://github.com/Entarochuan/Timely-Machine.git
+cd Timely-Machine
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[agentic,dev]"
