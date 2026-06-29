@@ -255,6 +255,8 @@ cd rl/internbootcamp_v2
 less README.md
 ```
 
+仓库在 `rl/internbootcamp_v2/examples/timer_toy_data/` 下提供了少量 general-timer train/validation parquet，可用于 smoke training。
+
 典型启动顺序：
 
 1. 启动一个任务环境 server：general timer、Agentic ML timer 或 Jericho。

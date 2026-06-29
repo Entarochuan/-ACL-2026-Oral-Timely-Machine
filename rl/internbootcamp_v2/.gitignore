@@ -128,6 +128,7 @@ activate
 
 # data
 *.parquet
+!examples/timer_toy_data/*.parquet
 
 
 # local logs

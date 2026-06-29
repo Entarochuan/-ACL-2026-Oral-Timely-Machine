@@ -4,8 +4,8 @@ set -euo pipefail
 # Example launcher for Timely RL training. Fill these paths for your machine.
 PROJECT_DIR="${PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../.." && pwd)}"
 MODEL_PATH="${MODEL_PATH:-/path/to/base_model}"
-TRAIN_FILE="${TRAIN_FILE:-/path/to/train.parquet}"
-VAL_FILE="${VAL_FILE:-/path/to/val.parquet}"
+TRAIN_FILE="${TRAIN_FILE:-${PROJECT_DIR}/examples/timer_toy_data/train.parquet}"
+VAL_FILE="${VAL_FILE:-${PROJECT_DIR}/examples/timer_toy_data/val.parquet}"
 TOOL_CONFIG_PATH="${TOOL_CONFIG_PATH:-internbootcamp/bootcamps/Basic_LLM_timer/configs/llm_timer_tool_config_with_server_urls.yaml}"
 EXPERIMENT_NAME="${EXPERIMENT_NAME:-timely_rl_qwen3_8b_example}"
 OUTPUT_DIR="${OUTPUT_DIR:-./outputs/${EXPERIMENT_NAME}}"

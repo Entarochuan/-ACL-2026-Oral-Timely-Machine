@@ -29,6 +29,8 @@ The most relevant files are:
 - `configs/llm_timer_tool_config.yaml`: native tool definitions.
 - `scripts/run_llm_timer_tool_server.sh`: backend tool-server launcher.
 - `scripts/run_llm_timer_rl_example.sh`: editable launcher template.
+- `examples/timer_toy_data/`: tiny general-timer train/validation parquet files for smoke training.
+- `examples/make_timer_toy_data.py`: script for regenerating the toy parquet files.
 
 ## Setup
 
@@ -54,9 +56,28 @@ python -m spacy download en_core_web_sm
 
 Install the actual training dependencies according to your CUDA, PyTorch, vLLM/SGLang, Ray, and verl environment. The original internal environment is not included.
 
+## Toy Training Data
+
+This release includes a tiny general reasoning timer dataset for smoke runs:
+
+```text
+examples/timer_toy_data/train.parquet  # 6 rows
+examples/timer_toy_data/val.parquet    # 2 rows
+examples/timer_toy_data/train.jsonl    # readable copy
+examples/timer_toy_data/val.jsonl      # readable copy
+```
+
+The parquet schema matches the Timely RL preprocessing output: `data_source`, `prompt`, `ability`, `reward_model`, and `extra_info`. It uses the `bootcamp/LlmTimer` reward path and only requires the general timer server, not ML benchmark data or Jericho ROMs.
+
+Regenerate the files with:
+
+```bash
+python examples/make_timer_toy_data.py
+```
+
 ## Running A Training Job
 
-Prepare your own model and parquet datasets.
+For a quick smoke run, use the included toy parquet files. For full experiments, replace them with your own processed parquet datasets.
 
 Start the task environment server required by your dataset:
 
@@ -98,18 +119,16 @@ Then start RL training in another shell:
 ```bash
 cd Timely-Machine/rl/internbootcamp_v2
 MODEL_PATH=/path/to/base_model \
-TRAIN_FILE=/path/to/train.parquet \
-VAL_FILE=/path/to/val.parquet \
 bash internbootcamp/bootcamps/Basic_LLM_timer/scripts/run_llm_timer_rl_example.sh
 ```
+
+`TRAIN_FILE` and `VAL_FILE` default to `examples/timer_toy_data/train.parquet` and `examples/timer_toy_data/val.parquet`. Set them explicitly when using your own data.
 
 A small single-GPU smoke run for an 8B model may need CPU offload:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
 MODEL_PATH=/path/to/base_model \
-TRAIN_FILE=/path/to/train.parquet \
-VAL_FILE=/path/to/val.parquet \
 bash internbootcamp/bootcamps/Basic_LLM_timer/scripts/run_llm_timer_rl_example.sh \
   trainer.total_training_steps=1 \
   data.train_batch_size=1 \
@@ -140,7 +159,7 @@ export TIMELY_JUDGE_API_KEY=EMPTY
 
 ## Data And Artifacts
 
-The release does not include training data, private labels, checkpoints, generated model outputs, ML benchmark data, or Jericho game ROM files. The copied tree keeps prompt templates and Jericho descriptions, but omits `ML_source/data_sources` and `jericho_game_sources/jericho-game-suite`. Preprocessing scripts are included as references and should be run with user-provided raw data paths.
+The release includes only the tiny general-timer toy parquet files above. It does not include full-scale training data, private labels, checkpoints, generated model outputs, ML benchmark data, or Jericho game ROM files. The copied tree keeps prompt templates and Jericho descriptions, but omits `ML_source/data_sources` and `jericho_game_sources/jericho-game-suite`. Preprocessing scripts are included as references and should be run with user-provided raw data paths.
 
 ## Smoke-Test Status
 

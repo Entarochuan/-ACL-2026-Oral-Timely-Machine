@@ -264,6 +264,8 @@ cd rl/internbootcamp_v2
 less README.md
 ```
 
+Tiny general-timer train/validation parquet files are included under `rl/internbootcamp_v2/examples/timer_toy_data/` for smoke training.
+
 Typical RL launch order:
 
 1. Start one task environment server: general timer, Agentic ML timer, or Jericho.
